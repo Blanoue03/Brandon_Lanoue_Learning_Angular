@@ -12,3 +12,4 @@ export class App {
   name = "Brandon";
   compliment = "Awesome"
 }
+
