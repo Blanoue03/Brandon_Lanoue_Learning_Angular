@@ -1,7 +1,8 @@
 export interface Game {
+  id: number,
   title: string,
   genre: string,
   creator: string,
   yearReleased: string,
-  rating?:string
+  rating?:number
 }
