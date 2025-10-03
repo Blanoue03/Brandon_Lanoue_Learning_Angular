@@ -2,13 +2,16 @@ import { Component, signal } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import  {Game} from './models/game'
 import {NgForOf} from '@angular/common';
+import {GameList} from './game-list/game-list';
+import {GameListItem} from './game-list-item/game-list-item';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NgForOf],
+  imports: [RouterOutlet, NgForOf, GameList, GameListItem],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
+
 export class App {
   protected readonly title = signal('untitled');
   gameList: Game[] = [{
