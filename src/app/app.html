@@ -1,33 +1,5 @@
 
 
-<div class="container">
-  <h2>Game Reviews</h2>
-  @for (game of gameList; track game.id) {
-    @if (game.rating != undefined && game.rating > 5)
-    {
-      <div class="goodReview">
-        <h3>{{game.title}}</h3>
-        <p>Genre: {{game.genre}}</p>
-        <p>Creator: {{game.creator}}</p>
-        <p>Released: {{game.yearReleased}}</p>
-        <p>Rating: {{game.rating}}/10 </p>
-      </div>
-    } @else {
-      <div  class="badReview">
-        <h3>{{game.title}}</h3>
-        <p>Genre: {{game.genre}}</p>
-        <p>Creator: {{game.creator}}</p>
-        <p>Released: {{game.yearReleased}}</p>
-        <p>Rating: {{game.rating}}/10 </p>
-      </div>
-    }
-
-
-  }
-
-
-</div>
-
 <app-game-list>
 
 

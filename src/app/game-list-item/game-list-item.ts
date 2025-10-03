@@ -1,4 +1,5 @@
 import {Component, Input} from '@angular/core';
+import  {Game} from '../models/game'
 
 @Component({
   selector: 'app-game-list-item',
@@ -8,5 +9,5 @@ import {Component, Input} from '@angular/core';
 })
 export class GameListItem {
 
-  @Input() gameName?:String;
+  @Input() game!:Game;
 }
