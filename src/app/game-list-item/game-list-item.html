@@ -1,4 +1,5 @@
-<div >
+<div [class]="{even: game.id % 2 == 0, odd: game.id % 2 == 1 }">
+
   <h3>{{game.title}}</h3>
   <p>Genre: {{game.genre}}</p>
   <p>Creator: {{game.creator}}</p>

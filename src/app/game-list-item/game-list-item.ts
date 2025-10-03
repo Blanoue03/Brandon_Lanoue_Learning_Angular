@@ -10,4 +10,5 @@ import  {Game} from '../models/game'
 export class GameListItem {
 
   @Input() game!:Game;
+
 }

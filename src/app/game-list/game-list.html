@@ -1,4 +1,14 @@
-<app-game-list-item [game]="gameList[0]"></app-game-list-item>
-<app-game-list-item [game]="gameList[1]"></app-game-list-item>
-<app-game-list-item [game]="gameList[2]"></app-game-list-item>
-<app-game-list-item [game]="gameList[3]"></app-game-list-item>
+
+<div></div>
+@for (game of gameList; track game.id) {
+
+  @if ((game.id + 2) % 2 == 0 ) {
+    <app-game-list-item [game]="game" class="even" ></app-game-list-item>
+  } @else {
+    <app-game-list-item [game]="game" class="odd" ></app-game-list-item>
+  }
+
+}
+
+
+
