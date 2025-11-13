@@ -32,9 +32,25 @@ export class GameReview {
     this.gameReviews = this.gameReviews.filter(review => review.id !== gameID);
     return of(this.gameReviews);
   }
-  getGameReviewById(gameID: number) : Observable<Game | undefined> {
-    const review = this.gameReviews.find(game => game.id === gameID);
-    return of(review);
+  getGameReviewById(gameID: number) : Observable<Game> {
+    const review  = this.gameReviews.find(game => game.id === gameID);
+    if(!review)
+    {
+      const badGame: Game = {
+        id: -1,
+        title: "Could not find game",
+        genre: "Could not find game",
+        creator: "Could not find game",
+        yearReleased: "Could not find game",
+        rating: -99
+      }
+      return of(badGame)
+    }
+    else
+    {
+      return of(review);
+    }
+
   }
 
 

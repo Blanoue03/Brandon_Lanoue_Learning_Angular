@@ -1,9 +1,10 @@
-import { Component, signal } from '@angular/core';
+import { Component, signal, OnInit } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import  {Game} from './models/game'
 import {NgForOf} from '@angular/common';
 import {GameList} from './game-list/game-list';
 import {GameListItem} from './game-list-item/game-list-item';
+import {GameReview} from './services/game-review';
 
 @Component({
   selector: 'app-root',
@@ -12,55 +13,26 @@ import {GameListItem} from './game-list-item/game-list-item';
   styleUrl: './app.css'
 })
 
-export class App {
+export class App implements OnInit{
   protected readonly title = signal('untitled');
-  gameList: Game[] = [{
-      id:1,
-      title: 'The Legend of Zelda: Breath of the Wild',
-      genre: 'Action-Adventure',
-      creator: 'Nintendo',
-      yearReleased: '2017',
-      rating: 1
-    },
-    {
-      id:2,
-      title: 'Minecraft',
-      genre: 'Sandbox',
-      creator: 'Mojang',
-      yearReleased: '2011',
-      rating: 9.0
-    },
-    {
-      id:3,
-      title: 'Half-Life 2',
-      genre: 'First-Person Shooter',
-      creator: 'Valve',
-      yearReleased: '2004',
-      rating: 9.7
-    },
-    {
-      id:4,
-      title: 'Stardew Valley',
-      genre: 'Simulation / RPG',
-      creator: 'ConcernedApe',
-      yearReleased: '2016',
-      rating: 9.2
-    },
-    {
-      id:5,
-      title: 'God of War',
-      genre: 'Action',
-      creator: 'Santa Monica Studio',
-      yearReleased: '2018',
-      rating: 9.5
-    },
-    {
-      id:6,
-      title: 'Among Us',
-      genre: 'Party / Social Deduction',
-      creator: 'Innersloth',
-      yearReleased: '2018',
-      rating: 3.2
-    }]
+  game : Game = {
+    id: -1,
+    title: "Could not find game",
+    genre: "Could not find game",
+    creator: "Could not find game",
+    yearReleased: "Could not find game",
+    rating: -99
+  }
+
+  constructor(private GameReview: GameReview) {
+  }
+  ngOnInit() {
+    this.GameReview.getGameReviewById(3).subscribe({
+      next: (data: Game) => this.game = data,
+      error:err => console.error("Error Fetching GameReviews", err),
+      complete:() => console.log("Student data fetch complete!")
+    })
+  }
+
 }
 
