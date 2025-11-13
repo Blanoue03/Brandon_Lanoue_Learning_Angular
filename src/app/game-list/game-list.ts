@@ -1,6 +1,8 @@
-import { Component } from '@angular/core';
+import { Component, OnInit} from '@angular/core';
 import  {Game} from '../models/game'
 import {GameListItem} from '../game-list-item/game-list-item';
+import {GameReview} from '../services/game-review';
+
 
 @Component({
   selector: 'app-game-list',
@@ -10,53 +12,21 @@ import {GameListItem} from '../game-list-item/game-list-item';
   templateUrl: './game-list.html',
   styleUrl: './game-list.css'
 })
-export class GameList {
-  gameList: Game[] = [{
-    id:1,
-    title: 'The Legend of Zelda: Breath of the Wild',
-    genre: 'Action-Adventure',
-    creator: 'Nintendo',
-    yearReleased: '2017',
-    rating: 1
-  },
-    {
-      id:2,
-      title: 'Minecraft',
-      genre: 'Sandbox',
-      creator: 'Mojang',
-      yearReleased: '2011',
-      rating: 9.0
-    },
-    {
-      id:3,
-      title: 'Half-Life 2',
-      genre: 'First-Person Shooter',
-      creator: 'Valve',
-      yearReleased: '2004',
-      rating: 9.7
-    },
-    {
-      id:4,
-      title: 'Stardew Valley',
-      genre: 'Simulation / RPG',
-      creator: 'ConcernedApe',
-      yearReleased: '2016',
-      rating: 9.2
-    },
-    {
-      id:5,
-      title: 'God of War',
-      genre: 'Action',
-      creator: 'Santa Monica Studio',
-      yearReleased: '2018',
-      rating: 9.5
-    },
-    {
-      id:6,
-      title: 'Among Us',
-      genre: 'Party / Social Deduction',
-      creator: 'Innersloth',
-      yearReleased: '2018',
-      rating: 3.2
-    }]
+export class GameList  implements  OnInit{
+
+  gameList: Game[] = []
+  constructor(private GameReview: GameReview)
+  {
+
+  }
+  ngOnInit() {
+      this.GameReview.getGameReviews().subscribe({
+        next: (data: Game[]) => this.gameList = data,
+        error:err => console.error("Error Fetching GameReviews", err),
+        complete:() => console.log("Student data fetch complete!")
+      })
+
+
+  }
+
 }

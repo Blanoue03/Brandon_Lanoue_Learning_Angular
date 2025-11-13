@@ -1,7 +1,6 @@
-import {Game} from '../models/game';
+import {Game} from "../models/game"
 
-export class GameList {
-  gameList: Game[] = [{
+export const data: Game[] = [{
     id:1,
     title: 'The Legend of Zelda: Breath of the Wild',
     genre: 'Action-Adventure',
@@ -49,4 +48,4 @@ export class GameList {
       yearReleased: '2018',
       rating: 3.2
     }]
-}
+
