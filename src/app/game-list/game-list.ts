@@ -32,9 +32,12 @@ export class GameList  implements  OnInit{
   }
   delete(id : number)
   {
-    console.log(id)
     this.GameReview.deleteGameReview(id)
-    this.gameList = this.GameReview.getGameReviews()
+    this.GameReview.getGameReviews().subscribe({
+      next: (data: Game[]) => this.gameList = data,
+      error:err => console.error("Error Fetching GameReviews", err),
+      complete:() => console.log("Student data fetch complete!")
+    })
 
   }
 
