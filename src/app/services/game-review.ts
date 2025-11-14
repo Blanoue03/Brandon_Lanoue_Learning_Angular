@@ -2,54 +2,36 @@ import { Injectable } from '@angular/core';
 import { data} from '../Data/mock-content'
 import { Observable, of } from 'rxjs';
 import {Game} from '../models/game';
+import {HttpClient} from '@angular/common/http';
 
 @Injectable({
   providedIn: 'root'
 })
 export class GameReview {
 
+  private apiUrl = 'api/games'
   gameReviews : Game[] = data;
-  constructor() {
+  constructor(private http: HttpClient) {
   }
   getGameReviews(): Observable<Game[]>
   {
-    return of(this.gameReviews);
+    return this.http.get<Game[]>(this.apiUrl);
   }
-  addGameReview(newGameReview:Game) : Observable<Game[]>{
-    this.gameReviews.push(newGameReview);
-    return of(this.gameReviews);
+  addGameReview(newGameReview:Game) : Observable<Game>{
+    return this.http.post<Game>(this.apiUrl, newGameReview)
   }
-  updateGameReview(updatedGameReview : Game) : Observable<Game[]>
+  updateGameReview(updatedGameReview : Game) : Observable<Game | undefined>
   {
-    const index = this.gameReviews.findIndex(review => review.id === updatedGameReview.id);
-    if (index !== -1) {
-      this.gameReviews[index] = updatedGameReview;
-    }
-    return of(this.gameReviews);
+    const url = `${this.apiUrl}/${updatedGameReview.id}`
+    return this.http.put<Game>(url,updatedGameReview)
   }
-  deleteGameReview(gameID: number) : Observable<Game[]>
+  deleteGameReview(gameID: number) : Observable<{}>
   {
-    this.gameReviews = this.gameReviews.filter(review => review.id !== gameID);
-    return of(this.gameReviews);
+    const url = `${this.apiUrl}/${gameID}`;
+    return this.http.delete(url)
   }
   getGameReviewById(gameID: number) : Observable<Game> {
-    const review  = this.gameReviews.find(game => game.id === gameID);
-    if(!review)
-    {
-      const badGame: Game = {
-        id: -1,
-        title: "Could not find game",
-        genre: "Could not find game",
-        creator: "Could not find game",
-        yearReleased: "Could not find game",
-        rating: -99
-      }
-      return of(badGame)
-    }
-    else
-    {
-      return of(review);
-    }
+   return this.http.get<Game>(`${this.apiUrl}/${gameID}`);
 
   }
 
