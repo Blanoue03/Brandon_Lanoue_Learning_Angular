@@ -1,6 +1,7 @@
 import { bootstrapApplication } from '@angular/platform-browser';
 import { appConfig } from './app/app.config';
 import { App } from './app/app';
+import { PreloadAllModules} from '@angular/router';
 import { provideRouter, Routes } from
     '@angular/router';
 import {GameList} from './app/game-list/game-list';
@@ -15,10 +16,10 @@ import {InMemoryData} from './app/services/in-memory-data';
 const routes: Routes = [
   { path:'', redirectTo: '/Games', pathMatch: 'full'},
   { path: 'Games', component: GameList },
-  { path: 'Games/:id', component: GameListItem},
-  { path: 'Modify-Review', component: ModifyListItem},
-  { path: 'Modify-Review/:id', component: ModifyListItem },
-  { path: '**', component:PageNotFound}
+  { path: 'Games/:id', loadComponent: () => import('./app/game-list-item/game-list-item').then(m => m.GameListItem) },
+  { path: 'Modify-Review', loadComponent: () => import('./app/modify-list-item/modify-list-item').then(m => m.ModifyListItem)},
+  { path: 'Modify-Review/:id', loadComponent: () => import('./app/modify-list-item/modify-list-item').then(m => m.ModifyListItem)},
+  { path: '**', loadComponent: () => import('./app/page-not-found/page-not-found').then(m => m.PageNotFound)}
 ];
 
 bootstrapApplication(App, {
