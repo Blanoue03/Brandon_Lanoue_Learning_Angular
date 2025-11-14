@@ -53,6 +53,10 @@ export class GameReview {
 
   }
 
+  generateNewId(): number {
+    return this.gameReviews.length > 0 ? Math.max(...this.gameReviews.map(game => game.id)) + 1 : 1;
+  }
+
 
 
 }

@@ -5,8 +5,6 @@
 }
 body, html
 {
-
-
   background: linear-gradient(180deg, rgba(145, 140, 127, 1.000) 0.000%, rgba(103, 109, 146, 1.000) 50.000%, rgba(6, 62, 128, 1.000) 100.000%);
   display: flex;
   width: 100%;
@@ -47,7 +45,31 @@ main
   height: 100%;
   float: left;
 }
-main > *
-{
 
+.gameReviewContainer
+{
+  height: 25%;
+  border: 2px solid black;
+}
+.gameReviewContainer > a > img
+{
+  height: 100%;
+  float: left;
+  margin-right: 10px;
+}
+.bad
+{
+  background: linear-gradient(135deg, rgba(255, 255, 196, 1.000) 0.000%, rgba(255, 97, 100, 1.000) 50.000%, rgba(176, 0, 18, 1.000) 100.000%)
+}
+.good
+{
+  background: linear-gradient(90deg, rgba(0, 255, 196, 1.000) 0.000%, rgba(0, 255, 188, 1.000) 16.667%, rgba(0, 255, 179, 1.000) 33.333%, rgba(0, 246, 170, 1.000) 50.000%, rgba(0, 229, 161, 1.000) 66.667%, rgba(0, 211, 152, 1.000) 83.333%, rgba(0, 192, 143, 1.000) 100.000%)
+}
+button {
+  padding: 0.5rem 1rem;
+  margin-right: 0.5rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 1rem;
 }

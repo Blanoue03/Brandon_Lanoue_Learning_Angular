@@ -1,12 +1,17 @@
 
-<div></div>
 @for (game of gameList; track game.id) {
 
-  @if ((game.id + 2) % 2 == 0 ) {
-    <app-game-list-item [game]="game" class="even" ></app-game-list-item>
-  } @else {
-    <app-game-list-item [game]="game" class="odd" ></app-game-list-item>
-  }
+  <div class="gameReviewContainer" [class]="{bad: game.rating < 5, good: game.rating > 5}">
+    <a [routerLink]="['/Games', game.id]" routerLinkActive="active"><img src ="{{game.cover}}"></a>
+    <h3>{{game.title}}</h3>
+    <p>Genre: {{game.genre}}</p>
+    <p>Creator: {{game.creator}}</p>
+    <p>Released: {{game.yearReleased}}</p>
+    <p>Rating: {{game.rating}}/10 </p>
+    <button [routerLink]="['/Modify-Review', game.id]">Edit</button>
+    <button (click)="delete(game.id)">Delete</button>
+  </div>
+
 
 }
 

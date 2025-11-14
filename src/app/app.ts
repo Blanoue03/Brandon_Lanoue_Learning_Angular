@@ -1,5 +1,5 @@
 import { Component, signal, OnInit } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import {RouterLink, RouterLinkActive, RouterOutlet} from '@angular/router';
 import  {Game} from './models/game'
 import {NgForOf} from '@angular/common';
 import {GameList} from './game-list/game-list';
@@ -8,7 +8,7 @@ import {GameReview} from './services/game-review';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NgForOf, GameList, GameListItem],
+  imports: [RouterOutlet, NgForOf, GameList, GameListItem, RouterLinkActive, RouterLink],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })

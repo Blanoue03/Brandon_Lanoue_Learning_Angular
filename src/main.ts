@@ -13,6 +13,7 @@ const routes: Routes = [
   { path: 'Games', component: GameList },
   { path: 'Games/:id', component: GameListItem},
   { path: 'Modify-Review', component: ModifyListItem},
+  { path: 'Modify-Review/:id', component: ModifyListItem },
   { path: '**', component:PageNotFound}
 ];
 
