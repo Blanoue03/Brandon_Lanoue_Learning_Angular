@@ -3,6 +3,7 @@ import  {Game} from '../models/game'
 import {ActivatedRoute, Router, RouterLink, RouterLinkActive} from '@angular/router';
 import {GameReview} from '../services/game-review';
 import {CurrencyPipe, DatePipe, NgIf, TitleCasePipe} from '@angular/common';
+import {RatingPipe} from '../pipes/rating-pipe'
 
 @Component({
   selector: 'app-game-list-item',
@@ -12,7 +13,8 @@ import {CurrencyPipe, DatePipe, NgIf, TitleCasePipe} from '@angular/common';
     NgIf,
     TitleCasePipe,
     DatePipe,
-    CurrencyPipe
+    CurrencyPipe,
+    RatingPipe
   ],
   templateUrl: './game-list-item.html',
   styleUrl: './game-list-item.css'

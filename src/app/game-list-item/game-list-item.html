@@ -6,7 +6,7 @@
     <p>Genre: {{game.genre}}</p>
     <p>Creator: {{game.creator}}</p>
     <p>Released: {{game.yearReleased | date:'longDate'}}</p>
-    <p>Rating: {{game.rating}}/10 </p>
+    <p>Rating: {{game | rating}}</p>
     <p>Cost: {{game.cost | currency:'CAD':"symbol-narrow"}} </p>
     <button [routerLink]="['/Modify-Review', game.id]">Edit</button>
     <button (click)="delete()">Delete</button>
