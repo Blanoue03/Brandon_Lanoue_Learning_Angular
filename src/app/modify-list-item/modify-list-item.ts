@@ -19,6 +19,7 @@ import {Game} from '../models/game';
 export class ModifyListItem implements OnInit{
     gameForm: FormGroup;
     game: Game | undefined;
+    error: string | null = null;
 
     constructor(private fb: FormBuilder, private route: ActivatedRoute, private gameReview: GameReview, private router:Router) {
 
@@ -33,40 +34,47 @@ export class ModifyListItem implements OnInit{
       })
 
     }
-    ngOnInit(): void {
+    ngOnInit(): void
+    {
       const id = this.route.snapshot.paramMap.get('id');
       if (id)
       {
-        this.gameReview.getGameReviewById(+id).subscribe(game =>{
-          if (game)
-          {
-            this.game = game;
-            this.gameForm.patchValue(game);
+        this.gameReview.getGameReviewById(+id).subscribe({
+          next: game =>{
+            if(game)
+            {
+             this.gameForm.patchValue(game)
+            }
+          },
+          error: err => {
+            this.error = 'Error fetching student';
+            console.error('Error fetching student:', err);
           }
         });
       }
     }
+
     onsubmit(): void{
       const game: Game = this.gameForm.value;
 
       if(game.id)
       {
-        this.gameReview.updateGameReview(game)
+        this.gameReview.updateGameReview(game).subscribe(() =>this.router.navigate(['/Games']) )
       }
       else {
-        const newID = this.gameReview.generateNewId();
+        const newID = this.gameReview.generateNewId()
         game.id = newID
-        this.gameReview.addGameReview(game)
+        this.gameReview.addGameReview(game).subscribe(() =>this.router.navigate(['/Games']) )
       }
-      this.router.navigate(['/Games'])
+
 
     }
 
     onDelete(): void{
       const id = this.gameForm.get('id')?.value;
       if(id){
-        this.gameReview.deleteGameReview(id)
-        this.router.navigate(['/Games'])
+        this.gameReview.deleteGameReview(id).subscribe(() => this.router.navigate(['/students']));
+
       }
     }
 

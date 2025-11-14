@@ -1,6 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import  {Game} from '../models/game'
-import {ActivatedRoute, RouterLink, RouterLinkActive} from '@angular/router';
+import {ActivatedRoute, Router, RouterLink, RouterLinkActive} from '@angular/router';
 import {GameReview} from '../services/game-review';
 import {NgIf} from '@angular/common';
 
@@ -18,7 +18,7 @@ export class GameListItem implements OnInit{
 
   game: Game | undefined;
 
-  constructor(private  route: ActivatedRoute, private gameReview: GameReview) {
+  constructor(private  route: ActivatedRoute, private gameReview: GameReview,  private router:Router) {
 
   }
   ngOnInit() {
@@ -34,7 +34,7 @@ export class GameListItem implements OnInit{
   {
     if (this.game)
     {
-      this.gameReview.deleteGameReview(this.game.id)
+      this.gameReview.deleteGameReview(this.game.id).subscribe(() => this.router.navigate(['/Games']));
     }
 
   }

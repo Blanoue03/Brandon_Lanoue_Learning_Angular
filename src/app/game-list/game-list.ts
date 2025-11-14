@@ -2,7 +2,7 @@ import { Component, OnInit} from '@angular/core';
 import  {Game} from '../models/game'
 import {GameListItem} from '../game-list-item/game-list-item';
 import {GameReview} from '../services/game-review';
-import {RouterLink, RouterLinkActive} from '@angular/router';
+import {Router, RouterLink, RouterLinkActive} from '@angular/router';
 import {ModifyListItem} from '../modify-list-item/modify-list-item';
 
 
@@ -19,7 +19,7 @@ import {ModifyListItem} from '../modify-list-item/modify-list-item';
 export class GameList  implements  OnInit{
 
   gameList: Game[] = []
-  constructor(private GameReview: GameReview)
+  constructor(private GameReview: GameReview,  private router:Router)
   {
 
   }
@@ -32,12 +32,8 @@ export class GameList  implements  OnInit{
   }
   delete(id : number)
   {
-    this.GameReview.deleteGameReview(id)
-    this.GameReview.getGameReviews().subscribe({
-      next: (data: Game[]) => this.gameList = data,
-      error:err => console.error("Error Fetching GameReviews", err),
-      complete:() => console.log("Student data fetch complete!")
-    })
+    this.GameReview.deleteGameReview(id).subscribe(() => this.router.navigate(['/Games']));
+
 
   }
 
