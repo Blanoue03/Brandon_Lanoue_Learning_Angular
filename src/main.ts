@@ -5,11 +5,15 @@ import { provideRouter, Routes } from
     '@angular/router';
 import {GameList} from './app/game-list/game-list';
 import {GameListItem} from './app/game-list-item/game-list-item';
+import {ModifyListItem} from './app/modify-list-item/modify-list-item';
+import {PageNotFound} from './app/page-not-found/page-not-found';
 
 const routes: Routes = [
+  { path:'', redirectTo: '/Games', pathMatch: 'full'},
   { path: 'Games', component: GameList },
-  { path: 'Games/:id', component: GameListItem
-  }
+  { path: 'Games/:id', component: GameListItem},
+  { path: 'Modify-Review', component: ModifyListItem},
+  { path: '**', component:PageNotFound}
 ];
 
 bootstrapApplication(App, {

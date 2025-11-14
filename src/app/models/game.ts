@@ -4,5 +4,7 @@ export interface Game {
   genre: string,
   creator: string,
   yearReleased: string,
-  rating?:number
+  rating:number,
+  cover?: string
+
 }

@@ -1,8 +1,15 @@
 
-<app-game-list-item [game] = "game"></app-game-list-item>
+<header>
+  <h1>Brandon's Game Reviews</h1>
+</header>
+<nav>
+  <ul>
+    <li><a routerLink="/Games" routerLinkActive="active">Home</a></li>
+    <li><a routerLink="/Modify-Review" routerLinkActive="active">Modify Review</a></li>
+  </ul>
+</nav>
+<main>
+<router-outlet></router-outlet>
+</main>
 
-<app-game-list>
-
-
-</app-game-list>
 
