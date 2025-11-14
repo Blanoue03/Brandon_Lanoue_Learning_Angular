@@ -6,8 +6,9 @@ export const data: Game[] = [
       title: 'The Legend of Zelda: Breath of the Wild',
       genre: 'Action-Adventure',
       creator: 'Nintendo',
-      yearReleased: '2017',
+      yearReleased: new Date("2017-03-03"),
       rating: 1,
+      cost: 60.99,
       cover: "The_Legend_of_Zelda_Breath_of_the_Wild.jpg"
     },
     {
@@ -15,8 +16,9 @@ export const data: Game[] = [
       title: 'Minecraft',
       genre: 'Sandbox',
       creator: 'Mojang',
-      yearReleased: '2011',
+      yearReleased: new Date("2017-03-03"),
       rating: 9.0,
+      cost: 60.99,
       cover: "minecraft-1639513933156.jpg"
     },
     {
@@ -24,8 +26,9 @@ export const data: Game[] = [
       title: 'Half-Life 2',
       genre: 'First-Person Shooter',
       creator: 'Valve',
-      yearReleased: '2004',
+      yearReleased:new Date("2017-03-03"),
       rating: 9.7,
+      cost: 60.99,
       cover: "Half-Life_2_cover.jpg"
     },
     {
@@ -33,8 +36,9 @@ export const data: Game[] = [
       title: 'Stardew Valley',
       genre: 'Simulation / RPG',
       creator: 'ConcernedApe',
-      yearReleased: '2016',
+      yearReleased: new Date("2017-03-03"),
       rating: 9.2,
+      cost: 60.99,
       cover: "Logo_of_Stardew_Valley.png"
     },
     {
@@ -42,8 +46,9 @@ export const data: Game[] = [
       title: 'God of War',
       genre: 'Action',
       creator: 'Santa Monica Studio',
-      yearReleased: '2018',
+      yearReleased: new Date("2017-03-03"),
       rating: 9.5,
+      cost: 60.99,
       cover: "God_of_War_4_cover.jpg"
     },
     {
@@ -51,8 +56,9 @@ export const data: Game[] = [
       title: 'Among Us',
       genre: 'Party / Social Deduction',
       creator: 'Innersloth',
-      yearReleased: '2018',
+      yearReleased: new Date("2017-03-03"),
       rating: 3.2,
+      cost: 60.99,
       cover: "Among_Us_cover_art.jpg"
     }]
 

@@ -2,14 +2,17 @@ import {Component, Input, OnInit} from '@angular/core';
 import  {Game} from '../models/game'
 import {ActivatedRoute, Router, RouterLink, RouterLinkActive} from '@angular/router';
 import {GameReview} from '../services/game-review';
-import {NgIf} from '@angular/common';
+import {CurrencyPipe, DatePipe, NgIf, TitleCasePipe} from '@angular/common';
 
 @Component({
   selector: 'app-game-list-item',
   imports: [
     RouterLink,
     RouterLinkActive,
-    NgIf
+    NgIf,
+    TitleCasePipe,
+    DatePipe,
+    CurrencyPipe
   ],
   templateUrl: './game-list-item.html',
   styleUrl: './game-list-item.css'

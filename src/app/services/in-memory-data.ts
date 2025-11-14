@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import {Game} from '../models/game';
+import {DatePipe} from '@angular/common';
 
 @Injectable({
   providedIn: 'root'
@@ -13,8 +14,9 @@ export class InMemoryData {
           title: 'The Legend of Zelda: Breath of the Wild',
           genre: 'Action-Adventure',
           creator: 'Nintendo',
-          yearReleased: '2017',
+          yearReleased: new Date("2017-03-04"),
           rating: 1,
+          cost: 60.99,
           cover: "The_Legend_of_Zelda_Breath_of_the_Wild.jpg"
         },
           {
@@ -22,8 +24,9 @@ export class InMemoryData {
             title: 'Minecraft',
             genre: 'Sandbox',
             creator: 'Mojang',
-            yearReleased: '2011',
+            yearReleased: new Date("2009-05-18"),
             rating: 9.0,
+            cost: 60.99,
             cover: "minecraft-1639513933156.jpg"
           },
           {
@@ -31,8 +34,9 @@ export class InMemoryData {
             title: 'Half-Life 2',
             genre: 'First-Person Shooter',
             creator: 'Valve',
-            yearReleased: '2004',
+            yearReleased: new Date("2004-11-17"),
             rating: 9.7,
+            cost: 60.99,
             cover: "Half-Life_2_cover.jpg"
           },
           {
@@ -40,8 +44,9 @@ export class InMemoryData {
             title: 'Stardew Valley',
             genre: 'Simulation / RPG',
             creator: 'ConcernedApe',
-            yearReleased: '2016',
+            yearReleased: new Date("2016-02-27"),
             rating: 9.2,
+            cost: 60.99,
             cover: "Logo_of_Stardew_Valley.png"
           },
           {
@@ -49,8 +54,9 @@ export class InMemoryData {
             title: 'God of War',
             genre: 'Action',
             creator: 'Santa Monica Studio',
-            yearReleased: '2018',
+            yearReleased: new Date("2018-04-21"),
             rating: 9.5,
+            cost: 60.99,
             cover: "God_of_War_4_cover.jpg"
           },
           {
@@ -58,8 +64,9 @@ export class InMemoryData {
             title: 'Among Us',
             genre: 'Party / Social Deduction',
             creator: 'Innersloth',
-            yearReleased: '2018',
+            yearReleased: new Date("2018-06-15"),
             rating: 3.2,
+            cost: 60.99,
             cover: "Among_Us_cover_art.jpg"
           }]
         return {games};

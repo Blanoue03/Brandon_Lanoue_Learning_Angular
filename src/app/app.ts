@@ -20,7 +20,8 @@ export class App implements OnInit{
     title: "Could not find game",
     genre: "Could not find game",
     creator: "Could not find game",
-    yearReleased: "Could not find game",
+    yearReleased: new Date("2017-03-03"),
+    cost: -99,
     rating: -99
   }
 

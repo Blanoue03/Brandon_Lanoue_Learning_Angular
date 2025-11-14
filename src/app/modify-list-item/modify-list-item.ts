@@ -30,6 +30,7 @@ export class ModifyListItem implements OnInit{
         creator: [''],
         yearReleased: [''],
         rating: [''],
+        cost: [''],
         cover: ['']
       })
 

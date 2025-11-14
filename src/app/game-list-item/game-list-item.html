@@ -2,11 +2,12 @@
 {
   <div class="gameReviewContainer" [class]=" {bad: game.rating < 5, good: game.rating > 5}">
     <a [routerLink]="['/Games', game.id]" routerLinkActive="active"><img src ="{{game.cover}}"></a>
-    <h3>{{game.title}}</h3>
+    <h3>{{game.title | titlecase}}</h3>
     <p>Genre: {{game.genre}}</p>
     <p>Creator: {{game.creator}}</p>
-    <p>Released: {{game.yearReleased}}</p>
+    <p>Released: {{game.yearReleased | date:'longDate'}}</p>
     <p>Rating: {{game.rating}}/10 </p>
+    <p>Cost: {{game.cost | currency:'CAD':"symbol-narrow"}} </p>
     <button [routerLink]="['/Modify-Review', game.id]">Edit</button>
     <button (click)="delete()">Delete</button>
   </div>

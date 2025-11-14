@@ -48,7 +48,7 @@ main
 
 .gameReviewContainer
 {
-  height: 25%;
+  height: 30%;
   border: 2px solid black;
 }
 .gameReviewContainer > a > img

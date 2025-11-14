@@ -4,6 +4,7 @@ import {GameListItem} from '../game-list-item/game-list-item';
 import {GameReview} from '../services/game-review';
 import {Router, RouterLink, RouterLinkActive} from '@angular/router';
 import {ModifyListItem} from '../modify-list-item/modify-list-item';
+import {CurrencyPipe, DatePipe, TitleCasePipe} from '@angular/common';
 
 
 @Component({
@@ -11,7 +12,10 @@ import {ModifyListItem} from '../modify-list-item/modify-list-item';
   imports: [
     GameListItem,
     RouterLink,
-    RouterLinkActive
+    RouterLinkActive,
+    CurrencyPipe,
+    TitleCasePipe,
+    DatePipe
   ],
   templateUrl: './game-list.html',
   styleUrl: './game-list.css'

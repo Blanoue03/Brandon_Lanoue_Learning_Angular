@@ -3,8 +3,9 @@ export interface Game {
   title: string,
   genre: string,
   creator: string,
-  yearReleased: string,
+  yearReleased: Date,
   rating:number,
+  cost: number,
   cover?: string
 
 }
