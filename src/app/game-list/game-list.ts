@@ -6,6 +6,7 @@ import {Router, RouterLink, RouterLinkActive} from '@angular/router';
 import {ModifyListItem} from '../modify-list-item/modify-list-item';
 import {CurrencyPipe, DatePipe, TitleCasePipe, } from '@angular/common';
 import {RatingPipe} from '../pipes/rating-pipe'
+import {HoverHighlight} from '../directives/hover-highlight';
 
 
 @Component({
@@ -17,7 +18,8 @@ import {RatingPipe} from '../pipes/rating-pipe'
     CurrencyPipe,
     TitleCasePipe,
     DatePipe,
-    RatingPipe
+    RatingPipe,
+    HoverHighlight
   ],
   templateUrl: './game-list.html',
   styleUrl: './game-list.css'
