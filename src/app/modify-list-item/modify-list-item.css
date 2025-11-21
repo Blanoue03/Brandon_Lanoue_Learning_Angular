@@ -13,6 +13,7 @@ form {
 /* Style for form groups */
 .form-field {
   margin-bottom: 1rem;
+
 }
 
 label {
@@ -28,7 +29,9 @@ input[type="checkbox"] {
   padding: 0.5rem;
   border: 1px solid #ccc;
   border-radius: 4px;
+
 }
+
 
 input[type="checkbox"] {
   width: auto;

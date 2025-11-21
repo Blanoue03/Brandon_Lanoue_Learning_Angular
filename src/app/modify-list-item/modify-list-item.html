@@ -1,42 +1,42 @@
 
 <form [formGroup]="gameForm" (ngSubmit)="onsubmit()">
 
-  <div class="form-field">
+  <div class="form-field" >
       <label for="id">ID</label>
-      <input type="number" id="id" formControlName="id" />
+      <input type="number" id="id" formControlName="id" [appHighlightOnFocus]="'lightblue'" />
   </div>
 
   <div class="form-field">
     <label for="title">Title</label>
-    <input type="text" id="title" formControlName="title" />
+    <input type="text" id="title" formControlName="title" [appHighlightOnFocus]="'lightblue'" />
   </div>
 
   <div class="form-field">
     <label for="genre">Genre</label>
-    <input type="text" id="genre" formControlName="genre" />
+    <input type="text" id="genre" formControlName="genre" [appHighlightOnFocus]="'lightblue'" />
   </div>
 
   <div class="form-field">
     <label for="creator">Creator</label>
-    <input type="text" id="creator" formControlName="creator" />
+    <input type="text" id="creator" formControlName="creator" [appHighlightOnFocus]="'lightblue'" />
   </div>
 
   <div class="form-field">
     <label for="yearReleased">Year Released</label>
-    <input type="text" id="yearReleased" formControlName="yearReleased" />
+    <input type="text" id="yearReleased" formControlName="yearReleased" [appHighlightOnFocus]="'lightblue'" />
   </div>
 
   <div class="form-field">
     <label for="rating">Rating</label>
-    <input type="number" id="rating" formControlName="rating" />
+    <input type="number" id="rating" formControlName="rating" [appHighlightOnFocus]="'lightblue'" />
   </div>
   <div class="form-field">
     <label for="cost">Cost</label>
-    <input type="number" id="cost" formControlName="cost" />
+    <input type="number" id="cost" formControlName="cost" [appHighlightOnFocus]="'lightblue'" />
   </div>
   <div class="form-field">
     <label for="cover">Cover</label>
-    <input type="file" id="cover" formControlName="cover" />
+    <input type="file" id="cover" formControlName="cover" [appHighlightOnFocus]="'lightblue'" />
   </div>
 
   <button type="submit">Submit</button>

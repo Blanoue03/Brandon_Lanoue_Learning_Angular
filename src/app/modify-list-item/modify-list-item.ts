@@ -3,6 +3,7 @@ import {FormBuilder, FormGroup, FormsModule, ReactiveFormsModule, Validators} fr
 import {ActivatedRoute, Router, RouterLink, RouterLinkActive} from '@angular/router';
 import {GameReview} from '../services/game-review';
 import {Game} from '../models/game';
+import {HighlightOnFocus} from '../directives/highlight-on-focus';
 
 @Component({
   selector: 'app-modify-list-item',
@@ -11,7 +12,8 @@ import {Game} from '../models/game';
     RouterLink,
     RouterLinkActive,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HighlightOnFocus
   ],
   templateUrl: './modify-list-item.html',
   styleUrl: './modify-list-item.css'
