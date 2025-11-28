@@ -1,54 +1,54 @@
 
 <form [formGroup]="gameForm" (ngSubmit)="onsubmit()">
 
-  <div class="form-field" >
+  <div class="form-field" #tooltip="matTooltip" matTooltip="Enter the ID of the game" matTooltipPosition="left" matTooltipHideDelay="100000">
     <mat-form-field appearance="fill">
       <mat-label>ID</mat-label>
       <input matInput type="number" id="id" formControlName="id" [appHighlightOnFocus]="'lightblue'" />
     </mat-form-field>
   </div>
 
-  <div class="form-field">
+  <div class="form-field" #tooltip="matTooltip" matTooltip="Enter the name of the game" matTooltipPosition="left" matTooltipHideDelay="100000">
     <mat-form-field appearance="fill" class="form-field">
       <mat-label>Title</mat-label>
       <input matInput type="text" formControlName="title" [appHighlightOnFocus]="'lightblue'">
     </mat-form-field>
   </div>
 
-  <div class="form-field">
+  <div class="form-field" #tooltip="matTooltip" matTooltip="Enter what genre the game is" matTooltipPosition="left" matTooltipHideDelay="100000">
     <mat-form-field appearance="fill" class="form-field">
       <mat-label>Genre</mat-label>
       <input matInput type="text" formControlName="genre" [appHighlightOnFocus]="'lightblue'">
     </mat-form-field>
   </div>
 
-  <div class="form-field">
+  <div class="form-field" #tooltip="matTooltip" matTooltip="Enter who created the game" matTooltipPosition="left" matTooltipHideDelay="100000">
     <mat-form-field appearance="fill" class="form-field">
       <mat-label>Creator</mat-label>
       <input matInput type="text" formControlName="creator" [appHighlightOnFocus]="'lightblue'">
     </mat-form-field>
   </div>
 
-  <div class="form-field">
+  <div class="form-field" #tooltip="matTooltip" matTooltip="Enter the year the game was released" matTooltipPosition="left" matTooltipHideDelay="100000">
     <mat-form-field appearance="fill" class="form-field">
       <mat-label>Year Released</mat-label>
       <input matInput type="number" formControlName="yearReleased" [appHighlightOnFocus]="'lightblue'">
     </mat-form-field>
   </div>
 
-  <div class="form-field">
-    <mat-form-field appearance="fill" class="form-field">
+  <div class="form-field"  #tooltip="matTooltip" matTooltip="Enter the rating of the game" matTooltipPosition="left" matTooltipHideDelay="100000">
+    <mat-form-field appearance="fill" class="form-field" >
       <mat-label>Rating</mat-label>
       <input matInput type="number" formControlName="rating" [appHighlightOnFocus]="'lightblue'">
     </mat-form-field>
   </div>
-  <div class="form-field">
+  <div class="form-field" #tooltip="matTooltip" matTooltip="Enter how much the game costs" matTooltipPosition="left" matTooltipHideDelay="100000">
     <mat-form-field appearance="fill" class="form-field">
       <mat-label>Cost</mat-label>
       <input matInput type="number" formControlName="cost" [appHighlightOnFocus]="'lightblue'">
     </mat-form-field>
   </div>
-  <div class="file-form-field">
+  <div class="file-form-field" #tooltip="matTooltip" matTooltip="Click browse and pick the image you want as the cover for the game" matTooltipPosition="left" matTooltipHideDelay="100000">
     <label for="cover">Cover</label>
     <input type="file" id="cover" formControlName="cover" [appHighlightOnFocus]="'lightblue'" />
   </div>

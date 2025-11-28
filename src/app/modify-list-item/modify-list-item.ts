@@ -8,6 +8,7 @@ import {HighlightOnFocus} from '../directives/highlight-on-focus';
 import {MatFormFieldModule} from '@angular/material/form-field';
 
 import {MatInputModule} from '@angular/material/input';
+import {TooltipPosition, MatTooltipModule} from '@angular/material/tooltip';
 
 @Component({
   selector: 'app-modify-list-item',
@@ -19,7 +20,8 @@ import {MatInputModule} from '@angular/material/input';
     ReactiveFormsModule,
     HighlightOnFocus,
     MatFormFieldModule,
-    MatInputModule
+    MatInputModule,
+    MatTooltipModule
   ],
   templateUrl: './modify-list-item.html',
   styleUrl: './modify-list-item.css'

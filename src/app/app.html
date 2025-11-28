@@ -1,15 +1,29 @@
 
 <header>
+  <button mat-icon-button  > <mat-icon (click)="sidenav.toggle()" fontIcon="menu"></mat-icon></button>
   <h1>Brandon's Game Reviews</h1>
+
 </header>
-<nav>
-  <ul>
-    <li><a routerLink="/Games" routerLinkActive="active">Home</a></li>
-    <li><a routerLink="/Modify-Review" routerLinkActive="active">Modify Review</a></li>
-  </ul>
-</nav>
-<main>
-<router-outlet></router-outlet>
-</main>
+
+
+<mat-sidenav-container >
+  <mat-sidenav class="sideNav" #sidenav mode="over">
+    <nav>
+      <ul>
+        <li><a routerLink="/Games" routerLinkActive="active">Home</a></li>
+        <li><a routerLink="/Modify-Review" routerLinkActive="active">Modify Review</a></li>
+      </ul>
+    </nav>
+  </mat-sidenav>
+
+  <mat-sidenav-content>
+    <main>
+      <router-outlet></router-outlet>
+    </main>
+  </mat-sidenav-content>
+
+</mat-sidenav-container>
+
+
 
 

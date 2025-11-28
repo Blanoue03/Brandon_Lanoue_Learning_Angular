@@ -25,9 +25,10 @@ html {
   ));
 }
 :root{
-  @include mat.form-field-overrides((
 
-  ))
+  @include mat.sidenav-overrides((
+    container-width: 15%
+  ));
 }
 
 

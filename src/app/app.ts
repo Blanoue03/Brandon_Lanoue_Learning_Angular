@@ -5,10 +5,13 @@ import {NgForOf} from '@angular/common';
 import {GameList} from './game-list/game-list';
 import {GameListItem} from './game-list-item/game-list-item';
 import {GameReview} from './services/game-review';
+import {MatSidenavModule} from '@angular/material/sidenav';
+import {MatIconModule} from '@angular/material/icon';
+import {MatIconButton} from '@angular/material/button';
 
 @Component({
   selector: 'app-root',
-  imports: [RouterOutlet, NgForOf, GameList, GameListItem, RouterLinkActive, RouterLink],
+  imports: [RouterOutlet, NgForOf, GameList, GameListItem, RouterLinkActive, RouterLink, MatSidenavModule, MatIconModule, MatIconButton],
   templateUrl: './app.html',
   styleUrl: './app.css'
 })
