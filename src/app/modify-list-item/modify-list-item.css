@@ -1,6 +1,25 @@
-/* modify-student.component.scss */
 
-/* Container for the form */
+mat-form-field {
+  width: 100%;
+}
+
+mat-form-field input[matInput] {
+  border: none ;
+  padding: 0 ;
+  border-radius: 0 ;
+}
+
+
+.plain-inputs input[type="text"],
+.plain-inputs input[type="number"],
+.plain-inputs input[type="checkbox"] {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+
 form {
   max-width: 600px;
   margin: 0 auto;
@@ -10,60 +29,15 @@ form {
   background-color: #f9f9f9;
 }
 
-/* Style for form groups */
-.form-field {
-  margin-bottom: 1rem;
-
-}
-
-label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-}
-
-input[type="text"],
-input[type="number"],
-input[type="checkbox"] {
-  width: 100%;
-  padding: 0.5rem;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-
-}
-
-
-input[type="checkbox"] {
-  width: auto;
-  margin-right: 0.5rem;
-}
-
-/* Style for buttons */
 button {
   padding: 0.5rem 1rem;
-  margin-right: 0.5rem;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
-  font-size: 1rem;
 }
 
-button[type="submit"] {
-  background-color: #4CAF50;
-  color: white;
+.file-form-field
+{
+  margin: 10px;
 }
-
-button[type="button"] {
-  background-color: #007BFF;
-  color: white;
-}
-
-button[type="button"]:last-of-type {
-  background-color: #DC3545;
-}
-
-/* Optional: Style for invalid form state */
-.invalid-form-message {
-  color: red;
-  font-weight: bold;
+.file-form-field > label
+{
+  margin-right: 10px;
 }

@@ -48,14 +48,50 @@ main
 
 .gameReviewContainer
 {
-  height: 30%;
+  height: 100%;
+  width: 100%;
   border: 2px solid black;
 }
-.gameReviewContainer > a > img
+.gameReviewContainer > a
 {
+  width: 40%;
   height: 100%;
   float: left;
+
+}
+
+.gameReviewContainer > a > img
+{
+  width: 100%;
+  float: left;
   margin-right: 10px;
+}
+
+.gameReviewContainer > div
+{
+  display: inline-block;
+  height: 10px;
+  width: 50%;
+
+  --mat-progress-bar-track-color: black;
+  --mat-progress-bar-active-indicator-color: yellow;
+}
+.gameReviewContainer > h3
+{
+  margin-top: 10px;
+  margin-bottom: 10px;
+  width: 60%;
+  display: inline-block;
+}
+.gameReviewContainer > .list
+{
+  width: 60%;
+  height: 60%;
+  display: inline-block;
+}
+.gameReviewContainer  .listItem
+{
+  height: 15%;
 }
 .bad
 {
@@ -73,3 +109,6 @@ button {
   cursor: pointer;
   font-size: 1rem;
 }
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }

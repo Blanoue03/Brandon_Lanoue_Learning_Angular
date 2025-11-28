@@ -5,6 +5,10 @@ import {GameReview} from '../services/game-review';
 import {Game} from '../models/game';
 import {HighlightOnFocus} from '../directives/highlight-on-focus';
 
+import {MatFormFieldModule} from '@angular/material/form-field';
+
+import {MatInputModule} from '@angular/material/input';
+
 @Component({
   selector: 'app-modify-list-item',
   standalone: true,
@@ -13,7 +17,9 @@ import {HighlightOnFocus} from '../directives/highlight-on-focus';
     RouterLinkActive,
     FormsModule,
     ReactiveFormsModule,
-    HighlightOnFocus
+    HighlightOnFocus,
+    MatFormFieldModule,
+    MatInputModule
   ],
   templateUrl: './modify-list-item.html',
   styleUrl: './modify-list-item.css'

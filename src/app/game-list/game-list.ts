@@ -7,6 +7,11 @@ import {ModifyListItem} from '../modify-list-item/modify-list-item';
 import {CurrencyPipe, DatePipe, TitleCasePipe, } from '@angular/common';
 import {RatingPipe} from '../pipes/rating-pipe'
 import {HoverHighlight} from '../directives/hover-highlight';
+import {MatGridListModule} from '@angular/material/grid-list';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
+import {MatButton} from '@angular/material/button';
+import {MatList, MatListModule} from '@angular/material/list';
+
 
 
 @Component({
@@ -19,11 +24,20 @@ import {HoverHighlight} from '../directives/hover-highlight';
     TitleCasePipe,
     DatePipe,
     RatingPipe,
-    HoverHighlight
+    HoverHighlight,
+    MatGridListModule,
+    MatProgressBarModule,
+    MatButton,
+    MatListModule
   ],
   templateUrl: './game-list.html',
   styleUrl: './game-list.css'
 })
+
+
+
+
+
 export class GameList  implements  OnInit{
 
   gameList: Game[] = []
